@@ -3,10 +3,14 @@
   "serviceConfiguration": {
     "apiName": "reactapollov3customd",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Volumes/workplace/amplify-js-samples-staging/samples/appsync/apolloV3/react-apollo-V3-custom-domain/amplify/backend/api/reactapollov3customd/schema.graphql",
+    "gqlSchemaPath": "/Volumes/workplace/appsync-sdk-custom-domain/react-apollo-V3-custom-domain/amplify/backend/api/reactapollov3customd/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-04-28T22:40:23.394Z",
+      "keyDescription": "customdomaintest"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
   }
 }
