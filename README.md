@@ -1,0 +1,1 @@
+# appsync-sdk-custom-domain
