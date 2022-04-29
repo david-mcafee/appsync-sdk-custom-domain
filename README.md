@@ -21,6 +21,8 @@
 
 ## Build:
 
+**Note: for sanity, and to avoid yarn link issues, the AppSync SDK packages are not listed in the package.json**
+
 ### Apollo V3
 
 ```bash

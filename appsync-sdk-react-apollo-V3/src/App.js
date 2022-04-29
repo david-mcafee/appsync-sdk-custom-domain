@@ -159,7 +159,9 @@ const Todos = () => {
 const App = () => {
   return (
     <div>
-      <h1>Todos using Apollo V3 / API Key 🚀</h1>
+      <h1>
+        AppSync Custom Domains w/ AppSync SDK (Apollo V3) and Multi-Auth 🚀
+      </h1>
       <Todos />
     </div>
   );

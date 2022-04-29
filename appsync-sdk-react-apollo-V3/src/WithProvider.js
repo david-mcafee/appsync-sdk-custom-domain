@@ -24,17 +24,17 @@ const region = awsExports.aws_appsync_region;
 // };
 
 // COGNITO:
-const auth = {
-  type: "AMAZON_COGNITO_USER_POOLS",
-  jwtToken: async () =>
-    (await Auth.currentSession()).getIdToken().getJwtToken(),
-};
+// const auth = {
+//   type: "AMAZON_COGNITO_USER_POOLS",
+//   jwtToken: async () =>
+//     (await Auth.currentSession()).getIdToken().getJwtToken(),
+// };
 
 // IAM:
-// const auth = {
-//   type: "AWS_IAM",
-//   credentials: () => Auth.currentCredentials(),
-// };
+const auth = {
+  type: "AWS_IAM",
+  credentials: () => Auth.currentCredentials(),
+};
 
 const link = ApolloLink.from([
   createAuthLink({ url, region, auth }),
