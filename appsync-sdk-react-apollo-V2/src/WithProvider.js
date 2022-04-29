@@ -2,45 +2,41 @@ import AWSAppSyncClient from "aws-appsync";
 import AppSyncConfig from "./aws-exports";
 import { ApolloProvider } from "react-apollo";
 import { Rehydrated } from "aws-appsync-react";
-import { withAuthenticator } from "@aws-amplify/ui-react";
+// import { Auth } from "aws-amplify";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+
 import App from "./App";
+import awsExports from "./aws-exports";
 
-const url = `https://api2.davidmcafee.com/graphql`;
+// API KEY:
+const auth = {
+  type: "API_KEY",
+  apiKey: awsExports.aws_appsync_apiKey,
+};
 
-// API KEY
+// COGNITO:
+// const auth = {
+//   type: "AMAZON_COGNITO_USER_POOLS",
+//   jwtToken: async () =>
+//     (await Auth.currentSession()).getIdToken().getJwtToken(),
+// };
+
+// IAM:
+// const auth = {
+//   type: "AWS_IAM",
+//   credentials: () => Auth.currentCredentials(),
+// };
+
 const client = new AWSAppSyncClient({
-  url,
+  url: AppSyncConfig.aws_appsync_graphqlEndpoint,
   region: AppSyncConfig.aws_appsync_region,
-  auth: {
-    type: AppSyncConfig.aws_appsync_authenticationType,
-    apiKey: AppSyncConfig.aws_appsync_apiKey,
-  },
+  auth,
 });
-
-// COGNITO
-// const client = new AWSAppSyncClient({
-//   url,
-//   region: AppSyncConfig.aws_appsync_region,
-//   auth: {
-//     type: AppSyncConfig.aws_appsync_authenticationType,
-//     jwtToken: async () =>
-//       (await Auth.currentSession()).getIdToken().getJwtToken(),
-//   },
-// });
-
-// IAM
-// const client = new AWSAppSyncClient({
-//   url,
-//   region: AppSyncConfig.aws_appsync_region,
-//   auth: {
-//     type: AppSyncConfig.aws_appsync_authenticationType,
-//     credentials: () => Auth.currentCredentials(),
-//   },
-// });
 
 const WithProvider = () => (
   <ApolloProvider client={client}>
     <Rehydrated>
+      <AmplifySignOut />
       <App />
     </Rehydrated>
   </ApolloProvider>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { gql, useSubscription } from "@apollo/client";
 import { useMutation, useQuery } from "@apollo/client";
 import { v4 as uuidv4 } from "uuid";
+import GraphiQLComponent from "./GraphiQL";
 
 const initialState = { name: "", description: "" };
 
@@ -163,6 +164,7 @@ const App = () => {
         AppSync Custom Domains w/ AppSync SDK (Apollo V3) and Multi-Auth 🚀
       </h1>
       <Todos />
+      <GraphiQLComponent />
     </div>
   );
 };

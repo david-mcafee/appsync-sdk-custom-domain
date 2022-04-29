@@ -49,8 +49,8 @@ const client = new ApolloClient({
 
 const WithProvider = () => (
   <ApolloProvider client={client}>
-    <App />
     <AmplifySignOut />
+    <App />
   </ApolloProvider>
 );
 

@@ -69,7 +69,7 @@ const App = ({ todos, data, createTodo, deleteTodo }) => {
       setFormState(initialState);
       await createTodo(todo);
     } catch (err) {
-      listTodos();
+      // listTodos();
       console.log("error creating todo:", err);
     }
   }
@@ -85,9 +85,7 @@ const App = ({ todos, data, createTodo, deleteTodo }) => {
 
   return (
     <div>
-      <h1>
-        AppSync Custom Domains w/ AppSync SDK (Apollo V3) and Multi-Auth 🚀
-      </h1>
+      <h1>Todos using Apollo V2 / API Key 🚀</h1>
       <input
         value={formState.name}
         onChange={(event) => setInput("name", event.target.value)}
