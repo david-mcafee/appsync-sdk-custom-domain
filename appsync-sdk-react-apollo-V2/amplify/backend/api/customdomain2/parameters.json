@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "customdomain2",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-04-29T02:06:05.155Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcustomdomain2b100bff1",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "customdomain2",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Volumes/workplace/appsync-sdk-custom-domain/appsync-sdk-react-apollo-V3/amplify/backend/api/customdomain2/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AWS_IAM"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-04-29T02:06:04.496Z",
+        "keyDescription": "apikey3"
+      },
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authcustomdomain2b100bff1"
+      }
+    ]
+  }
+}
