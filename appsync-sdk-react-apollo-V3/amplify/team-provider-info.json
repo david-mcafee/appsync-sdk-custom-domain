@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "customdomain2b100bff1": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dytaan77fmdw9",
+          "type": "manual"
+        }
       }
     }
   }
